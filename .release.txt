@@ -4,7 +4,7 @@ Version B: Belastet PC mit dem TREE command, killt explorer.exe
 Version C: Killt den Task Manager
 Version D: Erstellt Kopien von sich selbst mit random Namen, loopt den TREE command
 Version E: Loopt das ganze Programm, Mehr Kopien erstellen
-Version F: Aktiviert sich am Autostart, sehr gefährlich ohne Adminrechten, loopt über das erstellen der Kopien, erst aktiv nach restart
+Version F: Aktiviert sich am Autostart, sehr gefährlich ohne Adminrechten, loopt über das erstellen der Kopien, erst aktiv nach restart, Warnungen
 Version G: Fahrt den Computer nach Ausführung herunter (sehr gefährlich)
 Version H: 
 Version I:
