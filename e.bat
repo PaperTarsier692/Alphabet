@@ -1,6 +1,6 @@
 @echo off
 :a
-start %~dp0e.bat
+start %~dp0\e.bat
 setlocal ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
 set len=20
 set charpool=0123456789QWERTZUIOPASDFGHJKLYXCVBNMqwertzuiopasdfghjklyxcvbnm
